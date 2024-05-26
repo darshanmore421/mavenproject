@@ -36,6 +36,14 @@
 
   <build>
     <plugins>
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0-SNAPSHOT</version>
+        <configuration>
+          <webappDirectory>/var/lib/jenkins/workspace/develpoment</webappDirectory>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -219,7 +227,7 @@
   </scm>
 
   <prerequisites>
-    <maven>3.0.3</maven>
+    <maven>3.8.7</maven>
   </prerequisites>
 
 </project>
