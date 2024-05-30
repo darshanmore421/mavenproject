@@ -6,15 +6,15 @@ node('built-in')
 	}
     stage('Continuous Build') 
 	{
-    sh label: '', script: 'mvn package'
+    sh  'mvn package'
 	}
     stage('Continuous Deployment') 
 	{
-sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@172.31.42.160:/var/lib/tomcat8/webapps/qaenv.war'
+sh 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@172.31.42.160:/var/lib/tomcat8/webapps/qaenv.war'
 	}
     stage('Continuous Testing') 
 	{
-              sh label: '', script: 'echo "Testing Passed"'
+              sh  'echo "Testing Passed"'
 	}
   stage('Continuous Delivery') 
 	{
