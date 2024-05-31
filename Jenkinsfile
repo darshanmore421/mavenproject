@@ -10,8 +10,7 @@ node('built-in')
 	}
 	stage('Continuous Deployment') 
 	{
-	sh  'scp  /var/lib/jenkins/workspace/job_master/webapp/target/webapp.war   ubuntu@172.31.42.160:/home/ubuntu/qaenv.war'
-	sh 'mv /home/ubuntu/qaenv.war /var/lib/tomcat10/webapps/'
+	sh  'scp  /var/lib/jenkins/workspace/job_master/webapp/target/webapp.war   ubuntu@172.31.42.160:/var/lib/tomcat10/webapps/qaenv.war'
 	}
     stage('Continuous Testing') 
 	{
